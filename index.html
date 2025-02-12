@@ -8,14 +8,20 @@
     <style type="text/tailwindcss">
         @theme {
           --color-clear: rgba(255, 255, 255, 0.3);
+          --color-neo:rgba(201,201,201);
         }
 
         .mascara {
-            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 35%);
-            mask-image: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 35%);
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 1) 5%);
+            mask-image: radial-gradient(circle, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 5%);
             mask-size: cover;
             mask-repeat: no-repeat;
             transition: mask-image 0.1s ease-out; /* Agregar transición para suavizar el cambio */
+        }
+
+        .efectoBoton{
+          box-shadow: inset 9px 9px 18px #ababab,
+            inset -9px -9px 18px #e7e7e7;
         }
 
 
@@ -149,13 +155,13 @@
          <section id="seccion4" class=""> 
           <div class=""></div>
           <div class="grid grid-cols-8 grid-rows-4 gap-4 w-[50%] m-auto">
-            <div class="col-span-5 row-span-4">
-              <img src="./img/gameBoy1.png" alt="" class="w-full h-full object-cover rounded-lg ">
-            </div>
-            <div class="col-span-3 row-span-2 col-start-6">
+            <div class="col-span-5 row-span-4 rounded-[50px] bg-neo efectoBoton">
               <img src="./img/videojuegos.jpg" alt="" class="w-full h-full object-cover rounded-lg">
             </div>
-            <div class="col-span-3 row-span-2 col-start-6 row-start-3">
+            <div class="col-span-3 row-span-2 col-start-6 rounded-[50px] bg-neo efectoBoton">
+              <img src="./img/videojuegos.jpg" alt="" class="w-full h-full object-cover rounded-lg">
+            </div>
+            <div class="col-span-3 row-span-2 col-start-6 row-start-3 bg-neo efectoBoton">
               <img src="./img/videojuegos.jpg" alt="" class="w-full h-full object-cover rounded-lg">
             </div>
           </div>

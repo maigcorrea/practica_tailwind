@@ -130,13 +130,13 @@
     // Calcular un tamaño basado en el scroll. Cuanto más se haga scroll, más grande será el círculo.
     const maxMaskSize = 150; // Tamaño máximo del círculo (en porcentaje)
     const scrollMax = document.documentElement.scrollHeight - window.innerHeight; // Altura total de la página menos la ventana visible
-    const scrollPercent = Math.min(scrollY / scrollMax, 1); // Porcentaje de desplazamiento (0 a 1)
+    const scrollPercent = Math.min(scrollY / scrollMax, 1)*5; // Porcentaje de desplazamiento (0 a 1)
     
     // Calcular el tamaño del círculo en función del scroll
-    const maskSize = 25 + (scrollPercent * (maxMaskSize - 25)); // Empieza en 25% y crece hasta el 100%
+    const maskSize = 5 + (scrollPercent * (maxMaskSize - 5)); // Empieza en 25% y crece hasta el 100%
 
     // Actualizar el estilo de la máscara
-    const maskValue = `radial-gradient(circle, rgba(0, 0, 0, 0) ${maskSize}%, rgba(0, 0, 0, 1) ${maskSize + 10}%)`;
+    const maskValue = `radial-gradient(circle, rgba(0, 0, 0, 0) ${maskSize}%, rgba(0, 0, 0, 1) ${maskSize}%)`;
     
     // Aplicar el nuevo valor de máscara
     mascara.style.maskImage = maskValue;
