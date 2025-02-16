@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style type="text/tailwindcss">
         @theme {
+          --font-body: "Poppins";
           --color-clear: rgba(255, 255, 255, 0.3);
-          --color-neo:rgba(201,201,201);
+          --color-neo: rgba(201,201,201);
         }
 
         .mascara {
@@ -24,13 +28,28 @@
             inset -9px -9px 18px #e7e7e7;
         }
 
+        /* .aumentarL1{
+          view-timeline-name: --efecto;
+          animation-timeline: --efecto;
+          animation-name: timeline1;
+          animation-range: entry 35% cover 55%;
+          animation-fill-mode: both;
+        }
+
+        @keyframes timeline1{
+          from{
+            width: 0%;
+          }to{
+            width: 60%;
+          }
+        } */
 
         
 
 
         </style>
 </head>
-<body>
+<body class="bg-gray-100 font-body">
     <!-- <div>
         <img src="https://picsum.photos/200/300" alt="">
     </div>
@@ -103,24 +122,142 @@
 
     <main>
         <!-- SECCIÓN 1 -->
-         <section id="mainBanner" class="bg-green-50">
+         <section id="mainBanner" class="bg-gray-100 ">
 
-            <div class="absolute z-10 bg-green-100 w-full h-[100vh] mascara">
+            <div class="absolute z-10 bg-gray-300 w-full h-[100vh] rounded-b-[50px] mascara">
                 
             </div>
             <div class="container flex flex-wrap gap-4 items-center m-auto h-[100vh]">
-                <div class="w-full lg:w-[55%] text-[50px] md:text-[75px] px-[20px] md:px-[80px] ">
+                <div class="w-full lg:w-[55%] text-[50px] md:text-[75px] px-[20px] md:px-[80px] font-medium">
                     <h1 class="text-center">Redescubre la <span class="text-green-800">Gameboy</span></h1>
                 </div>
-                <div class="w-full lg:w-[40%]">
+                <div class="w-fit lg:w-[40%]">
                     <img src="./img/gameBoy1.png" class="w-full" alt="">
                 </div>
             </div>
          </section>
 
 
+         <!-- SECCION2 -->
+        <section id="historia" class="p-9 pt-[90px] bg-gray-300 rounded-tl-[50px] rounded-tr-[50px] my-3">
+          <h2 class="text-5xl font-medium mb-[80px]">El nacimiento de una leyenda (1989)</h2>
+          <div class="flex flex-wrap justify-around items-center bg-gray-200 rounded-xl py-9">
+            <div class="w-fit">
+              <img src="./img/gif-2.webp" alt="" class="w-full">
+            </div>
 
-        <!-- SECCIÓN 2 -->
+            <div class="w-[100%] md:w-[50%] md:bg-gray-400 md:p-5 rounded-xl">
+              <div class="md:bg-clear backdrop-blur-lg p-7 rounded-xl">
+                <p>La Game Boy fue lanzada por Nintendo el 21 de abril de 1989 en Japón y llegó a Norteamérica en julio del mismo año. Fue creada por Gunpei Yokoi, quien también diseñó la serie Game & Watch. Su concepto revolucionario combinaba portabilidad, autonomía y una gran biblioteca de juegos, marcando el inicio de la era de las consolas portátiles.</p>
+                <h3 class="font-semibold mt-3">Innovaciones clave</h3>
+                <ul>
+                  <li>Primera consola portatil de cartuchos intercambiables</li>
+                  <li>Bajo consumo de batería (hasta 30 horas con 4 pilas AA).</li>
+                  <li>Incluía Tetris, que ayudó a impulsar sus ventas.</li>
+                  <li>Compatibilidad con accesorios como el Game Link Cable para jugar en multijugador.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SECCION 2.1 -->
+        <section id="timeline">
+          <h2 class="text-5xl font-medium">EVOLUCIÓN A LO LARGO DEL TIEMPO</h2>
+          <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
+            <div class="w-[0%] h-1 bg-green-500 aumentarL1"></div>
+            <div class="w-[80%] opacity-0 opacidadT1">
+              <h3 class="font-semibold"> Game Boy (1989)</h3>
+              <ul>
+                <li>- Pantalla LCD monocromática de 8 bits.</li>
+                <li>- Incluye Tetris, considerado el juego más influyente del sistema.</li>
+                <li>- Compatibilidad con cartuchos intercambiables.</li>
+              </ul>
+            </div>           
+          </div>
+
+          <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
+            <div class="w-[0%] h-1 bg-green-500 aumentarL2"></div>
+              <div class="w-[70%] opacity-0 opacidadT2">
+                <h3 class="font-semibold">Game Boy Pocket (1996)</h3>
+                <ul>
+                  <li>Más pequeña y liviana que la original.</li>
+                  <li>Usa 2 pilas AAA en lugar de 4 AA.</li>
+                  <li>Pantalla mejorada (más clara y sin el tinte verde de la original).</li>
+                </ul>
+              </div>
+          </div>
+
+
+          <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
+            <div class="w-[0%] h-1 bg-green-500 aumentarL3"></div>
+              <div class="w-[60%] opacity-0 opacidadT3">
+                <h3 class="font-semibold">Game Boy Color (1998)</h3>
+                <ul>
+                  <li>Primera Game Boy con pantalla a color (56 colores simultáneos).</li>
+                  <li>Compatible con juegos de Game Boy clásico.</li>
+                  <li>Mejor procesador y mayor velocidad.</li>
+                </ul>
+              </div>
+          </div>
+
+
+
+          <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
+            <div class="w-[0%] h-1 bg-green-500 aumentarL4"></div>
+              <div class="w-[50%] opacity-0 opacidadT4">
+                <h3 class="font-semibold">Game Boy Advance (2001)</h3>
+                <ul>
+                  <li>Evolución con gráficos en 32 bits.</li>
+                  <li>Compatible con juegos de Game Boy y Game Boy Color.</li>
+                  <li>Diseño más ergonómico.</li>
+                </ul>
+              </div>
+          </div>
+        </section>
+
+        <!-- SECCION 3 -->
+        <section id="caracteristicas" class="py-32 bg-yellow-400">
+          <div class="container bg-blue-300 m-auto pt-32">
+            <h2 class="mb-14 text-center text-4xl font-medium lg:text-7xl">Características</h2>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div class="rounded-lg bg-red-100 p-16 md:col-span-2 lg:col-span-2 lg:row-span-2">
+                <div class="flex h-full flex-col justify-between gap-14">
+                  <p class="pt-8 text-2xl font-medium lg:pt-14 lg:text-4xl">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Dignissimos ipsum perspiciatis
+                    consectetur assumenda incidunt.</p>
+                  <div class="text-sm">
+                    <p class="font-semibold">John Doe</p>
+                    <p>CEO, Company Example</p>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-lg bg-red-100 p-10">
+                <div class="flex flex-col gap-14">
+                  <p class="text-lg font-medium">Lorem ipsum dolor sit amet consecte adipisicing elit.</p>
+                  <div class="text-sm">
+                    <p class="font-semibold">John Doe</p>
+                    <p>CEO, Company Example</p>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-lg bg-red-100 p-10">
+                <div class="flex flex-col gap-14">
+                  <p class="text-lg font-medium">Lorem ipsum dolor sit amet consecte adipisicing elit.</p>
+                  <div class="text-sm">
+                    <p class="font-semibold">John Doe</p>
+                    <p>CEO, Company Example</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <!-- SECCIÓN 2.2-->
         <section id="main container flex flex-wrap">
             <div class="bg-[url(./img/fondo4.png)] bg-cover w-full flex flex-wrap items-center justify-center">
                 <div class="bg-clear backdrop-blur-lg border-b-1 border-l-1 border-t-2 border-t-brown-600 border-l-white text-center w-fit m-5 p-5 w-24">
