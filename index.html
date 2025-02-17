@@ -28,6 +28,18 @@
             inset -9px -9px 18px #e7e7e7;
         }
 
+        .sombra{
+          box-shadow:  -21px -9px 75px 0px rgb(255, 255, 255), inset 5px 0px 10px 0px rgba(0, 0, 0, 0.4), inset 10px 0 25px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .sombraCajas{
+          box-shadow:  -21px -9px 75px 0px rgb(255, 255, 255), inset 5px 0px 10px 0px rgba(0, 0, 0, 0.4), 10px 0 25px 1px rgba(0, 0, 0, 0.5);
+        }
+
+        .sombraMenu{
+          box-shadow: 10px 0 25px 1px rgba(0, 0, 0, 0.5);
+        }
+
         /* .aumentarL1{
           view-timeline-name: --efecto;
           animation-timeline: --efecto;
@@ -75,7 +87,7 @@
     </div> -->
 
     <header>
-        <nav class="bg-white border-gray-200 dark:bg-gray-900">
+        <!-- <nav class="bg-white border-gray-200 dark:bg-gray-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
               <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
                   <img src="" class="h-8" alt="Logo" />
@@ -107,16 +119,33 @@
                 </ul>
               </div>
             </div>
-          </nav>
-
-          <!-- <nav class="bg-white">
-            <div>
-
-            </div>
-            <div>
-
-            </div>
           </nav> -->
+
+
+          <nav class="bg-clear backdrop-blur-lg p-4 flex justify-between items-center fixed top-0 w-full z-20 sombraMenu">
+            <h1 class="text-xl">Logo Gameboy</h1>
+            <button id="menu-btn" class="md:hidden focus:outline-none">
+                &#9776;
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-4">
+                <li><a href="#" class="hover:underline">Historia</a></li>
+                <li><a href="#" class="hover:underline">Evolución</a></li>
+                <li><a href="#" class="hover:underline">Curiosidades</a></li>
+                <li><a href="#" class="hover:underline">Coleccionismo</a></li>
+            </ul>
+        </nav>
+        
+        <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-blue-700 text-white transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden z-20">
+            <button id="close-btn" class="p-4">&times;</button>
+            <ul class="p-4 space-y-4">
+                <li><a href="#" class="block hover:underline">Historia</a></li>
+                <li><a href="#" class="block hover:underline">Evolución</a></li>
+                <li><a href="#" class="block hover:underline">Curiosidades</a></li>
+                <li><a href="#" class="block hover:underline">Coleccionismo</a></li>
+            </ul>
+        </div>
+
+
     </header>
 
 
@@ -127,11 +156,11 @@
             <div class="absolute z-10 bg-gray-300 w-full h-[100vh] rounded-b-[50px] mascara">
                 
             </div>
-            <div class="container flex flex-wrap gap-4 items-center m-auto h-[100vh]">
-                <div class="w-full lg:w-[55%] text-[50px] md:text-[75px] px-[20px] md:px-[80px] font-medium">
+            <div class="flex flex-wrap gap-4 items-center m-auto h-[100vh]">
+                <div class="w-full lg:w-[65%] text-[50px] md:text-[75px] lg:text-[120px] px-[20px] md:px-[80px] font-medium">
                     <h1 class="text-center">Redescubre la <span class="text-green-800">Gameboy</span></h1>
                 </div>
-                <div class="w-fit lg:w-[40%]">
+                <div class="w-fit lg:w-[30%]">
                     <img src="./img/gameBoy1.png" class="w-full" alt="">
                 </div>
             </div>
@@ -139,15 +168,15 @@
 
 
          <!-- SECCION2 -->
-        <section id="historia" class="p-9 pt-[90px] bg-gray-300 rounded-tl-[50px] rounded-tr-[50px] my-3">
-          <h2 class="text-5xl font-medium mb-[80px]">El nacimiento de una leyenda (1989)</h2>
-          <div class="flex flex-wrap justify-around items-center bg-gray-200 rounded-xl py-9">
+        <section id="historia" class="p-9 pt-[90px] bg-gray-300 rounded-[50px] my-3 mx-3 sombra">
+          <h2 class="text-5xl uppercase font-medium mb-[80px]">El nacimiento de una leyenda (1989)</h2>
+          <div class="flex flex-wrap justify-around items-center bg-gray-200 rounded-xl py-9 sombra">
             <div class="w-fit">
               <img src="./img/gif-2.webp" alt="" class="w-full">
             </div>
 
-            <div class="w-[100%] md:w-[50%] md:bg-gray-400 md:p-5 rounded-xl">
-              <div class="md:bg-clear backdrop-blur-lg p-7 rounded-xl">
+            <div class="w-[100%] md:w-[50%] md:bg-gray-200 md:p-5 rounded-xl lg:sombraCajas">
+              <div class="md:bg-clear md:backdrop-blur-lg p-7 rounded-xl ">
                 <p>La Game Boy fue lanzada por Nintendo el 21 de abril de 1989 en Japón y llegó a Norteamérica en julio del mismo año. Fue creada por Gunpei Yokoi, quien también diseñó la serie Game & Watch. Su concepto revolucionario combinaba portabilidad, autonomía y una gran biblioteca de juegos, marcando el inicio de la era de las consolas portátiles.</p>
                 <h3 class="font-semibold mt-3">Innovaciones clave</h3>
                 <ul>
@@ -163,23 +192,26 @@
 
 
         <!-- SECCION 2.1 -->
-        <section id="timeline">
-          <h2 class="text-5xl font-medium">EVOLUCIÓN A LO LARGO DEL TIEMPO</h2>
+        <section id="timeline" class="bg-gray-200 rounded-[50px] py-32 my-3 mx-3 sombra">
+          <h2 class="text-5xl px-12 font-medium">EVOLUCIÓN A LO LARGO DEL TIEMPO</h2>
           <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
             <div class="w-[0%] h-1 bg-green-500 aumentarL1"></div>
-            <div class="w-[80%] opacity-0 opacidadT1">
+            <div class="w-[50%] opacity-0 my-[80px] opacidadT1">
               <h3 class="font-semibold"> Game Boy (1989)</h3>
               <ul>
                 <li>- Pantalla LCD monocromática de 8 bits.</li>
                 <li>- Incluye Tetris, considerado el juego más influyente del sistema.</li>
                 <li>- Compatibilidad con cartuchos intercambiables.</li>
               </ul>
-            </div>           
+            </div> 
+            <!-- <div class="w-[30%] absolute right-0">
+              <img src="img/gif-versions.webp" class="w-full" alt="">
+            </div>           -->
           </div>
 
           <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
-            <div class="w-[0%] h-1 bg-green-500 aumentarL2"></div>
-              <div class="w-[70%] opacity-0 opacidadT2">
+            <div class="w-[0%] h-1 bg-green-500  aumentarL2"></div>
+              <div class="w-[70%] opacity-0 mb-[80px] opacidadT2">
                 <h3 class="font-semibold">Game Boy Pocket (1996)</h3>
                 <ul>
                   <li>Más pequeña y liviana que la original.</li>
@@ -192,7 +224,7 @@
 
           <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
             <div class="w-[0%] h-1 bg-green-500 aumentarL3"></div>
-              <div class="w-[60%] opacity-0 opacidadT3">
+              <div class="w-[60%] opacity-0 mb-[80px] opacidadT3">
                 <h3 class="font-semibold">Game Boy Color (1998)</h3>
                 <ul>
                   <li>Primera Game Boy con pantalla a color (56 colores simultáneos).</li>
@@ -206,7 +238,7 @@
 
           <div class="relative w-full mt-[40px] flex flex-wrap items-center gap-[30px]">
             <div class="w-[0%] h-1 bg-green-500 aumentarL4"></div>
-              <div class="w-[50%] opacity-0 opacidadT4">
+              <div class="w-[50%] opacity-0 mb-[80px] opacidadT4">
                 <h3 class="font-semibold">Game Boy Advance (2001)</h3>
                 <ul>
                   <li>Evolución con gráficos en 32 bits.</li>
@@ -215,39 +247,38 @@
                 </ul>
               </div>
           </div>
+
+          <div class="w-full">
+            <img src="./img/gif-versions.webp" class=" mb:w-100% m-auto rounded-xl" alt="">
+          </div>
         </section>
 
         <!-- SECCION 3 -->
-        <section id="caracteristicas" class="py-32 bg-yellow-400">
-          <div class="container bg-blue-300 m-auto pt-32">
-            <h2 class="mb-14 text-center text-4xl font-medium lg:text-7xl">Características</h2>
+        <section id="caracteristicas" class="my-3 mx-3 py-32 bg-gray-300 rounded-[50px] sombra">
+          <div class="container md:bg-gray-300 m-auto">
+            <h2 class="mb-14 text-4xl font-medium lg:text-7xl">Curiosidades</h2>
             <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div class="rounded-lg bg-red-100 p-16 md:col-span-2 lg:col-span-2 lg:row-span-2">
+              <div class="rounded-lg bg-gray-100 p-10 md:p-[100px] md:col-span-2 lg:col-span-2 lg:row-span-2 sombraCajas">
                 <div class="flex h-full flex-col justify-between gap-14">
-                  <p class="pt-8 text-2xl font-medium lg:pt-14 lg:text-4xl">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Dignissimos ipsum perspiciatis
-                    consectetur assumenda incidunt.</p>
+                  <p class="pt-8 text-2xl font-medium lg:pt-14 lg:text-4xl">Una Game Boy sobrevivió a una explosión en la Guerra del Golfo y aún funciona (se exhibe en el Museo de Nintendo en Nueva York).</p>
                   <div class="text-sm">
-                    <p class="font-semibold">John Doe</p>
-                    <p>CEO, Company Example</p>
+                    <a href="#" class="p-4 bg-green-200 rounded-xl hover:bg-green-300">Saber más</a>
                   </div>
                 </div>
               </div>
-              <div class="rounded-lg bg-red-100 p-10">
+              <div class="rounded-lg bg-gray-100 p-10 sombraCajas">
                 <div class="flex flex-col gap-14">
-                  <p class="text-lg font-medium">Lorem ipsum dolor sit amet consecte adipisicing elit.</p>
+                  <p class="text-lg font-medium">Tetris, incluido en la Game Boy, fue clave en la caída de la Unión Soviética al convertirse en el primer videojuego de la URSS que llegó a Occidente.</p>
                   <div class="text-sm">
-                    <p class="font-semibold">John Doe</p>
-                    <p>CEO, Company Example</p>
+                    <a href="#" class="p-4 bg-green-200 rounded-xl hover:bg-green-300">Saber más</a>
                   </div>
                 </div>
               </div>
-              <div class="rounded-lg bg-red-100 p-10">
+              <div class="rounded-lg bg-gray-100 p-10 sombraCajas">
                 <div class="flex flex-col gap-14">
-                  <p class="text-lg font-medium">Lorem ipsum dolor sit amet consecte adipisicing elit.</p>
+                  <p class="text-lg font-medium">Antes de decidirse por "Game Boy", Nintendo consideró llamarla "Dot Matrix Game" debido a su pantalla de matriz de puntos.</p>
                   <div class="text-sm">
-                    <p class="font-semibold">John Doe</p>
-                    <p>CEO, Company Example</p>
+                    <a href="#" class="p-4 bg-green-200 rounded-xl hover:bg-green-300">Saber más</a>
                   </div>
                 </div>
               </div>
@@ -261,9 +292,8 @@
         <section id="main container flex flex-wrap">
             <div class="bg-[url(./img/fondo4.png)] bg-cover w-full flex flex-wrap items-center justify-center">
                 <div class="bg-clear backdrop-blur-lg border-b-1 border-l-1 border-t-2 border-t-brown-600 border-l-white text-center w-fit m-5 p-5 w-24">
-                    <p class="text-lg">Descubre</p>
-                    <h2 class="text-4xl mb-4">Características</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero optio numquam quod itaque commodi corrupti. Facere quasi, sunt alias id labore ipsam officiis dolor hic sit, ad incidunt tempore.</p>
+                    <h2 class="text-4xl mb-4">¿Sabías qué?</h2>
+                    <p>Una Game Boy sobrevivió a una explosión en la Guerra del Golfo y aún funciona (se exhibe en el Museo de Nintendo en Nueva York).</p>
                     <a  class="inline-block border-1 bg-green-100 py-[10px] px-[20px]" href="#">Click</a>
                 </div>
             </div>
@@ -271,7 +301,7 @@
         </section>
 
         <!-- SECCIÓN 3 -->
-        <section id="seccion3" class="my-[100px]">
+        <!-- <section id="seccion3" class="my-[100px]">
           <div class="relative flex flex-wrap justify-center">
             <div class=" flex justify-center lg:w-[50%] mx-5">
               <img src="./img/gameboy2.jpg" alt="" class="rounded-tl-[50px]">
@@ -286,10 +316,10 @@
               <a href="" class=" p-[10px] bg-yellow-400">Algo3</a>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <!-- SECCIÓN 4 -->
-         <section id="seccion4" class=""> 
+         <!-- <section id="seccion4" class=""> 
           <div class=""></div>
           <div class="grid grid-cols-8 grid-rows-4 gap-4 w-[50%] m-auto">
             <div class="col-span-5 row-span-4 rounded-[50px] bg-neo efectoBoton">
@@ -302,7 +332,7 @@
               <img src="./img/videojuegos.jpg" alt="" class="w-full h-full object-cover rounded-lg">
             </div>
           </div>
-         </section>
+         </section> -->
 
 
 
@@ -340,15 +370,14 @@
         
     </main>
 
-    <footer class="flex flex-col space-y-10 justify-center m-10">
+    <footer class="flex flex-col space-y-10 justify-center p-10 rounded-tr-[35px] rounded-tl-[35px] bg-gray-300">
 
-      <div class="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
-          <a class="hover:text-gray-900" href="#">Home</a>
-          <a class="hover:text-gray-900" href="#">About</a>
-          <a class="hover:text-gray-900" href="#">Services</a>
-          <a class="hover:text-gray-900" href="#">Media</a>
-          <a class="hover:text-gray-900" href="#">Gallery</a>
-          <a class="hover:text-gray-900" href="#">Contact</a>
+      <div class="flex justify-center flex-wrap gap-6 font-medium">
+          <a class="hover:text-gray-900 hover:underline hover:underline-offset-8" href="#">Historia</a>
+          <a class="hover:text-gray-900 hover:underline hover:underline-offset-8" href="#">Evolución</a>
+          <a class="hover:text-gray-900 hover:underline hover:underline-offset-8" href="#">Curiosidades</a>
+          <a class="hover:text-gray-900 hover:underline hover:underline-offset-8" href="#">Otro</a>
+          <a class="hover:text-gray-900 hover:underline hover:underline-offset-8" href="#">Coleccionismo</a>
       </div>
   
       <div class="flex justify-center space-x-5">
@@ -361,14 +390,11 @@
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
           </a>
-          <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" />
-          </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
               <img src="https://img.icons8.com/fluent/30/000000/twitter.png" />
           </a>
       </div>
-      <p class="text-center text-gray-700 font-medium">&copy; 2022 Company Ltd. All rights reservered.</p>
+      <p class="text-center font-medium">&copy; 2025 Gameboy. All rights reservered.</p>
   </footer>
 
     <script src="./index.js"></script>
